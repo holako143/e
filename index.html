@@ -20,10 +20,10 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
     
     <!-- Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/e/manifest.json">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="/e/assets/css/app.css">
 </head>
 <body class="theme-default">
     <!-- Navigation Bar -->
@@ -464,13 +464,13 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <!-- Scripts -->
-    <script type="module" src="assets/js/app.js"></script>
+    <script type="module" src="/e/assets/js/app.js"></script>
     
     <!-- Service Worker Registration -->
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('sw.js')
+                navigator.serviceWorker.register('/e/sw.js')
                     .then(function(registration) {
                         console.log('ServiceWorker registration successful');
                     })

@@ -3,31 +3,31 @@
 
 const CACHE_NAME = 'emoji-cipher-pro-v2.1.0'; // Version bump to trigger update
 const urlsToCache = [
-  'index.html',
-  'manifest.json',
-  'assets/css/app.css',
-  'assets/js/app.js',
+  '/e/index.html',
+  '/e/manifest.json',
+  '/e/assets/css/app.css',
+  '/e/assets/js/app.js',
   // Add all the new modules to the cache
-  'assets/js/modules/config.js',
-  'assets/js/modules/crypto.js',
-  'assets/js/modules/dom.js',
-  'assets/js/modules/events.js',
-  'assets/js/modules/handlers.js',
-  'assets/js/modules/state.js',
-  'assets/js/modules/ui.js',
-  'assets/js/modules/ui_handlers.js',
-  'assets/fonts/fa-solid-900.woff2',
-  'assets/fonts/fa-regular-400.woff2',
-  'assets/fonts/fa-brands-400.woff2',
-  'assets/icons/icon-72x72.png',
-  'assets/icons/icon-96x96.png',
-  'assets/icons/icon-128x128.png',
-  'assets/icons/icon-144x144.png',
-  'assets/icons/icon-152x152.png',
-  'assets/icons/icon-192x192.png',
-  'assets/icons/icon-384x384.png',
-  'assets/icons/icon-512x512.png',
-  'assets/icons/icon.svg'
+  '/e/assets/js/modules/config.js',
+  '/e/assets/js/modules/crypto.js',
+  '/e/assets/js/modules/dom.js',
+  '/e/assets/js/modules/events.js',
+  '/e/assets/js/modules/handlers.js',
+  '/e/assets/js/modules/state.js',
+  '/e/assets/js/modules/ui.js',
+  '/e/assets/js/modules/ui_handlers.js',
+  '/e/assets/fonts/fa-solid-900.woff2',
+  '/e/assets/fonts/fa-regular-400.woff2',
+  '/e/assets/fonts/fa-brands-400.woff2',
+  '/e/assets/icons/icon-72x72.png',
+  '/e/assets/icons/icon-96x96.png',
+  '/e/assets/icons/icon-128x128.png',
+  '/e/assets/icons/icon-144x144.png',
+  '/e/assets/icons/icon-152x152.png',
+  '/e/assets/icons/icon-192x192.png',
+  '/e/assets/icons/icon-384x384.png',
+  '/e/assets/icons/icon-512x512.png',
+  '/e/assets/icons/icon.svg'
 ];
 
 // Install event - cache resources
@@ -104,7 +104,7 @@ self.addEventListener('fetch', function(event) {
         
         // Return offline page for navigation requests
         if (event.request.destination === 'document') {
-          return caches.match('index.html');
+          return caches.match('/e/index.html');
         }
       })
   );
@@ -133,8 +133,8 @@ self.addEventListener('push', function(event) {
     
     const options = {
       body: data.body,
-      icon: 'assets/icons/icon-192x192.png',
-      badge: 'assets/icons/badge-72x72.png',
+      icon: '/e/assets/icons/icon-192x192.png',
+      // badge: '/e/assets/icons/badge-72x72.png', // Icon not found in project
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -143,13 +143,13 @@ self.addEventListener('push', function(event) {
       actions: [
         {
           action: 'explore',
-          title: 'فتح التطبيق',
-          icon: 'assets/icons/checkmark.png'
+          title: 'فتح التطبيق'
+          // icon: '/e/assets/icons/checkmark.png' // Icon not found in project
         },
         {
           action: 'close',
-          title: 'إغلاق',
-          icon: 'assets/icons/xmark.png'
+          title: 'إغلاق'
+          // icon: '/e/assets/icons/xmark.png' // Icon not found in project
         }
       ]
     };
@@ -167,7 +167,7 @@ self.addEventListener('notificationclick', function(event) {
   
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('index.html')
+      clients.openWindow('/e/index.html')
     );
   }
 });
