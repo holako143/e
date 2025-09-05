@@ -1,4 +1,4 @@
-const CACHE_NAME = 'emoji-cipher-pro-cache-v2';
+const CACHE_NAME = 'emoji-cipher-pro-cache-v3';
 const urlsToCache = [
   '/',
   'index.html',
@@ -7,7 +7,8 @@ const urlsToCache = [
   'assets/js/bundle.js',
   'assets/fonts/fa-brands-400.woff2',
   'assets/fonts/fa-regular-400.woff2',
-  'assets/fonts/fa-solid-900.woff2'
+  'assets/fonts/fa-solid-900.woff2',
+  'assets/icons/icon-128x128.png'
 ];
 
 self.addEventListener('install', event => {
